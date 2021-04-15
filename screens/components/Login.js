@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TextInput, View, Button } from "react-native";
 import * as firebase from "firebase";
-
+import { AsyncStorage } from "react-native";
 
 export default class Login extends React.Component {
   state = { email: "", password: "", errorMessage: null };
@@ -11,21 +11,13 @@ export default class Login extends React.Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        
-        this.props.navigation.navigate("Home");
+        // AsyncStorage.setItem("key", "I like to save it.");
+        this.props.navigation.navigate("Main");
       })
       .catch(error => this.setState({ errorMessage: error.message }));
   };
   render() {
     return (
-
-      // Guys this is just a placeholder User Interface, use the same 
-      // template, but ONLY alter the CSS properties, and some 
-      // tags if required. You can remove this commentonce finished.
-      // Best of luck!
-
-
-
       <View style={styles.container}>
         <Text>Login</Text>
         {this.state.errorMessage && (
@@ -47,10 +39,6 @@ export default class Login extends React.Component {
           value={this.state.password}
         />
         <Button title="Login" onPress={this.handleLogin} />
-        <Button
-          title="Don't have an account? Sign Up"
-          onPress={() => this.props.navigation.navigate("SignUp")}
-        />
       </View>
     );
   }
