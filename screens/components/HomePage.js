@@ -6,20 +6,26 @@ import {
   } from '@expo-google-fonts/rouge-script';
 import AppLoading from 'expo-app-loading';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Events from './Events';
 
 // Importing icons
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { color } from 'react-native-reanimated';
 
 const Tab = createBottomTabNavigator();
 
-function Home() {
+
+function Home({ navigation }) {
+
+ const login = () => {
+     navigation.navigate('Login');
+ }
+    
     return (
         <View style={styles.container}>
             
-        <Text style={styles.login} >
+        <Text style={styles.login} onPress={login}>
             Sign in
         </Text>
         <Text style={styles.hello}>
@@ -27,13 +33,13 @@ function Home() {
         </Text>
 
         <View style={styles.categories}>
-            <Text style={styles.categoryNames}>Popular</Text>
+            <Text style={{margin: 20, fontSize: 20, color: '#EDA772', fontWeight: 'bold'}}>Popular</Text>
             <Text style={styles.categoryNames}>Hackathon</Text>
             <Text style={styles.categoryNames}>Talks</Text>
             <Text style={styles.categoryNames}>ML</Text>
         </View>
 
-
+        <Events />
 
     </View>
     );
@@ -63,15 +69,12 @@ function Notifications() {
       );
 }
 
-export default function HomePage({ navigation }){
+export default function HomePage(){
 
     let [fontsLoaded] = useFonts ({
         RougeScript_400Regular
     });
 
-    const handleLogin = () => {
-        navigation.navigate('Login');   
-    }
 
     if (!fontsLoaded) { 
         return <AppLoading /> 

@@ -1,0 +1,32 @@
+[
+    {
+        "key" : 1,
+        "poster" : "https://www.coexcenter.com/wp-content/uploads/2018/11/venue-auditorium-2.jpg",
+        "title" : "Global Communications Conference",
+        "date" : "Sat, Apr 24",
+        "hosted" : "Online",
+        "location" : "CV Raman",
+        "timings" : "5:30 PM - 6:00 PM",
+        "cost" : "FREE"
+    },
+    {
+        "key" : 2,
+        "poster" : "https://www.coexcenter.com/wp-content/uploads/2018/11/venue-auditorium-2.jpg",
+        "title" : "Global Communications Conference",
+        "date" : "Sat, Apr 24",
+        "hosted" : "Online",
+        "location" : "CV Raman",
+        "timings" : "5:30 PM - 6:00 PM",
+        "cost" : "FREE"
+    },
+    {
+        "key" : 3,
+        "poster" : "https://www.coexcenter.com/wp-content/uploads/2018/11/venue-auditorium-2.jpg",
+        "title" : "Global Communications Conference",
+        "hosted" : "Online",
+        "date" : "Sat, Apr 24",
+        "location" : "CV Raman",
+        "timings" : "5:30 PM - 6:00 PM",
+        "cost" : "FREE"
+    }
+]

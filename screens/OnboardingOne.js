@@ -57,12 +57,13 @@ const styles = StyleSheet.create({
     marginLeft: 160,
     marginRight: 160,
     bottom: 70,
+    elevation: 10,
    },
     skip: {
         color: 'white',
         position: 'absolute',
-        fontSize: 16,
-        right: 30,
+        fontSize: 19,
+        right: 20,
         top: 45,
     },
     firstCard: {

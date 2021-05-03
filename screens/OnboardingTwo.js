@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     marginLeft: 140,
     marginRight: 140,
     bottom: 70,
+    elevation: 10,
    },
    getStartedText: {
     fontWeight: 'bold',
@@ -59,8 +60,8 @@ const styles = StyleSheet.create({
     skip: {
         color: 'white',
         position: 'absolute',
-        fontSize: 16,
-        right: 30,
+        fontSize: 19,
+        right: 20,
         top: 45,
     },
     firstCard: {

@@ -3,7 +3,8 @@ import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity,  } from "r
 import * as firebase from "firebase";
 import { AsyncStorage } from "react-native";
 
-export default class Login extends React.Component {
+export default function Login() {
+
   state = { email: "", password: "", errorMessage: null };
   handleLogin = () => {
     const { email, password } = this.state;
@@ -16,7 +17,7 @@ export default class Login extends React.Component {
       })
       .catch(error => this.setState({ errorMessage: error.message }));
   };
-  render(){
+
     return (
       <View>
       <View style={styles.container}>
@@ -46,13 +47,10 @@ export default class Login extends React.Component {
             <Text style={styles.loginText} onPress={this.handleLogin}>Sign In</Text>
           </TouchableOpacity>
         </View>
-        
-        
-  
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
 
