@@ -88,7 +88,7 @@ export default function HomePage(){
                 activeTintColor: '#ED8F47',
                 style: {
                     backgroundColor: '#031c33',
-                    height: 56,
+                    height: 53,
                     padding: 10,
                     borderTopWidth: 0,
                 }
@@ -100,7 +100,7 @@ export default function HomePage(){
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({ color, size }) => (
-                    <Entypo name="home" size={36} color={color} />
+                    <Entypo name="home" size={34} color={color} />
                 ),
 
             }}
@@ -113,7 +113,7 @@ export default function HomePage(){
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({color, size}) => (
-                    <FontAwesome name="search" size={32} color={color} />
+                    <FontAwesome name="search" size={30} color={color} />
                 ),
             }}
         />
@@ -124,7 +124,7 @@ export default function HomePage(){
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({color, size}) => (
-                    <FontAwesome name="bookmark" size={32} color={color} />
+                    <FontAwesome name="bookmark" size={30} color={color} />
                 ),
             }}
         />
@@ -135,7 +135,7 @@ export default function HomePage(){
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({color, size}) => (
-                    <MaterialCommunityIcons name="bell" size={32} color={color} />
+                    <MaterialCommunityIcons name="bell" size={30} color={color} />
                 ),
             }}
         />

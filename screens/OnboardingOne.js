@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginLeft: 160,
     marginRight: 160,
     bottom: 70,
-    elevation: 10,
+    elevation: 20,
    },
     skip: {
         color: 'white',

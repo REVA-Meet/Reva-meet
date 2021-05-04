@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 300,
     },
     getStarted: {
-    width: 120,
-    height: 50,
+    width: 126,
+    height: 55,
     borderRadius: 50,
     backgroundColor: '#EDA772',
     justifyContent: 'center',
@@ -52,10 +52,12 @@ const styles = StyleSheet.create({
     marginLeft: 140,
     marginRight: 140,
     bottom: 70,
-    elevation: 10,
+    elevation: 20,
    },
    getStartedText: {
-    fontWeight: 'bold',
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#031C33',
    },
     skip: {
         color: 'white',
