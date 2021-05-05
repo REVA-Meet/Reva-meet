@@ -69,6 +69,8 @@ const styles = StyleSheet.create({
   eventPoster: {
     height: 230,
     width: 'auto',
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   eventTitle: {
     position: 'relative',
@@ -99,9 +101,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#031C33',
     width: 4,
     height: 4,
-    borderRadius: 50,
     textAlign: 'center',
-    marginTop: 7,
+    marginTop: 5,
+    marginBottom: 9,
     marginHorizontal: 5,
   },
 })

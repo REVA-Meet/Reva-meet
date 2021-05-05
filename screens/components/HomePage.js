@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
-        fontFamily: 'RougeScript_400Regular',
     },
     hello: {
         fontSize: 45,
