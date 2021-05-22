@@ -6,6 +6,7 @@ import {
   } from '@expo-google-fonts/rouge-script';
 import AppLoading from 'expo-app-loading';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SearchPage from './SearchPage';
 import Events from './Events';
 
 // Importing icons
@@ -48,7 +49,7 @@ function Home({ navigation }) {
 function Search() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Settings!</Text>
+          <SearchPage />
         </View>
       );
 }
@@ -100,7 +101,7 @@ export default function HomePage(){
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({ color, size }) => (
-                    <Entypo name="home" size={34} color={color} />
+                    <Entypo name="home" size={33} color={color} />
                 ),
 
             }}
