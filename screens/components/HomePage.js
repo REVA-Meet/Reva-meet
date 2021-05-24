@@ -8,6 +8,8 @@ import AppLoading from 'expo-app-loading';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchPage from './SearchPage';
 import Events from './Events';
+import BookmarkedEvents from './BookmarkedEvents'
+import AccountPage from './AccountPage'
 
 // Importing icons
 import { Entypo } from '@expo/vector-icons';
@@ -48,24 +50,40 @@ function Home({ navigation }) {
 
 function Search() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <SearchPage />
+        <View style={styles.searchContainer}>
+            <Text style={styles.login}>
+                Sign in
+            </Text>
+            <Text style={styles.categoriesHeading}>
+                Categories
+            </Text>
+
+            <SearchPage />
         </View>
       );
 }
 
 function Bookmarked() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Bookmarked</Text>
-        </View>
+        <View style={styles.bookmarkContainerMain}>
+
+        <Text style={styles.login} >
+            Sign in
+        </Text>
+        <Text style={styles.bookmarkHeading}>
+            Bookmarks
+        </Text>
+
+        <BookmarkedEvents />
+
+    </View>
       );
 }
 
-function Notifications() {
+function Account() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Notifications!</Text>
+          <AccountPage />
         </View>
       );
 }
@@ -96,7 +114,7 @@ export default function HomePage(){
             }}
         >
         <Tab.Screen 
-            name="H" 
+            name="Home" 
             component={Home}
             options={{
                 tabBarLabel: '',
@@ -131,12 +149,12 @@ export default function HomePage(){
         />
 
         <Tab.Screen 
-            name="Notifications" 
-            component={Notifications} 
+            name="Account" 
+            component={Account} 
             options={{
                 tabBarLabel: '',
                 tabBarIcon: ({color, size}) => (
-                    <MaterialCommunityIcons name="bell" size={30} color={color} />
+                    <MaterialCommunityIcons name="account" size={38} color={color} />
                 ),
             }}
         />
@@ -146,16 +164,20 @@ export default function HomePage(){
 }
 
 const styles = StyleSheet.create({
-    container: {
 
+    container: {
         flex: 1,
         backgroundColor: '#031c33',
     },
+    bookmarkContainerMain: {
+        backgroundColor: '#E8E8E8',
+        height: 2000,
+    },
     login: {
         position: 'absolute',
-        top: 50,
+        top: 55,
         right: 20,
-        padding: 10,
+        padding: 8,
         width: 80,
         backgroundColor: '#EDA772',
         borderRadius: 80,
@@ -168,6 +190,20 @@ const styles = StyleSheet.create({
         fontFamily: 'RougeScript_400Regular',
         left: 20,
         color: 'white',
+        top: 50,
+    },
+    bookmarkHeading: {
+        fontSize: 45,
+        fontFamily: 'RougeScript_400Regular',
+        left: 20,
+        color: '#031C34',
+        top: 50,
+    },
+    categoriesHeading: {
+        fontSize: 45,
+        fontFamily: 'RougeScript_400Regular',
+        left: 20,
+        color: '#031C34',
         top: 50,
     },
     categories: {

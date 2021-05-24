@@ -1,66 +1,85 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, TouchableHighlight } from "react-native";
+import React, { Component, useEffect } from 'react';
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { FlatList } from 'react-native-gesture-handler';
-import events from '../EventList.json'
+import { app } from './base';
+import AddBookmark from './BookmarkIcon'
 
-export default class Events extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const db = app.firestore()
 
-  renderEvents = ({ item }) => {
-    return(
-      <View style={styles.smallDiv}>
-        <Image style={styles.eventPoster} source={{uri: item.poster}} />
-        <Text style={styles.eventTitle}>
-          {item.title}
-        </Text>
 
-        <View style={{flexDirection:'row', flexWrap:'wrap'}}>
-          <Text style={styles.eventDate}>
-              {item.date} 
-          </Text>
-          <Text style={styles.seperator}></Text>
-          <Text style={styles.eventHosted}>
-              {item.hosted}
-          </Text>
-          <Text style={styles.seperator}></Text>
-          <Text style={styles.eventLocation}>
-              {item.location}
-          </Text>
-        </View>
+export default function Events() {
 
-        <View style={{flexDirection:'row', flexWrap:'wrap'}}>
-          <Text style={styles.eventTimings}>
-              {item.timings}
-          </Text>
-          <Text style={styles.seperator}></Text>
-          <Text style={styles.eventCost}>
-              {item.cost}
-          </Text>
-        </View>
-      </View>
-    )
-  }
+  const [events, setEvents] = React.useState([])
 
-  render(){
-    return(
-      <View>
-            <FlatList
-              data={events}
-              renderItem={this.renderEvents}
-              keyExtractor={item => item.id}
-              contentContainerStyle={{paddingBottom: 200}}
-            />
-      </View>
-          )
+  useEffect(() => {
+    const fetchEvents = async () =>{
+      const eventsCollection = await db.collection("events").get()
+      setEvents(eventsCollection.docs.map(doc => {
+        return doc.data()
+      }))
     }
-};
+    fetchEvents();
+  }, [])
+
+  
+
+  return(
+    <ScrollView>
+
+      {events.map(events => {
+
+        return (
+
+          <View style={styles.smallDiv}>
+            <Image style={styles.eventPoster} source={{uri: events.poster}} />
+            
+            <Text style={styles.eventTitle}>
+            {events.title}
+            </Text>
+
+            <TouchableOpacity style={styles.bookmarkIcon}>
+                <AddBookmark />
+            </TouchableOpacity>
+
+            <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+              <Text style={styles.eventDate}>
+                  {events.date} 
+              </Text>
+              <Text style={styles.seperator}></Text>
+              <Text style={styles.eventHosted}>
+                  {events.hosted}
+              </Text>
+              <Text style={styles.seperator}></Text>
+              <Text style={styles.eventLocation}>
+                  {events.location}
+              </Text>
+            </View>
+
+            <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+              <Text style={styles.eventTimings}>
+                  {events.timings}
+              </Text>
+              <Text style={styles.seperator}></Text>
+              <Text style={styles.eventCost}>
+                  {events.cost}
+              </Text>
+            </View>
+
+          </View>
+        );
+          
+      })}
+
+
+    </ScrollView>
+  );
+
+}
+
 
 const styles = StyleSheet.create({
   smallDiv : {
-    height: 308,
+
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
     margin: 15, 
@@ -102,8 +121,14 @@ const styles = StyleSheet.create({
     width: 4,
     height: 4,
     textAlign: 'center',
-    marginTop: 5,
+    marginTop: 9,
     marginBottom: 9,
     marginHorizontal: 5,
   },
+  bookmarkIcon: {
+    right: 10,
+    position: 'absolute',
+    bottom: 10,
+
+  }
 })

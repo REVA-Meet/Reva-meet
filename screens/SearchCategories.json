@@ -1,0 +1,27 @@
+[
+    {
+        "categoriesPoster" : "https://images.unsplash.com/photo-1589254066213-a0c9dc853511?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "categoriesTitle" : "Robotics"
+    },
+    {
+        "categoriesPoster" : "https://lh3.googleusercontent.com/ze_cWSe3Y0rUcQuTD-H3TmzCBTJwkv2iUgVud8FzS-0EohQatCYPagCq1YINUm0-TC_IkQ=s94",
+        "categoriesTitle" : "App Development"
+    },
+    {
+        "categoriesPoster" : "https://lh3.googleusercontent.com/fp5KTE6H8WtZcX3l7YW06xd-k2n8vBdi0-99n_Vt0XAEUn1XF77mmhouQl9Sfb4SH7qnZQ=s94",
+        "categoriesTitle" : "Virtual Reality"
+    },
+    {
+        "categoriesPoster" : "https://lh3.googleusercontent.com/0_S2LT240Gh38U2Ibrj1g7qqgp4UAfQQasGO-hadtAHLf8aSj_p6SedadjjJaO4EEq-veQ=s94",
+        "categoriesTitle" : "UI/UX"
+    },
+    {
+        "categoriesPoster" : "https://lh3.googleusercontent.com/uw1xAL_FcHAPTBiGM4bXE_8BKBN1AN_X5GdvsbuLOKryBVkgLoxNocffYZRPGzrS9zGu=s94",
+        "categoriesTitle" : "Sports"
+    },
+    {
+        "categoriesPoster" : "https://lh3.googleusercontent.com/W7cmVJB7_PijudnmMuS6txFsc3OWMJ9Lh9vasdzpmH3f_mWY_7ACNXtDbkBsKBRhqgqjjg=s94",
+        "categoriesTitle" : "Tech Talk"
+
+    }
+]
