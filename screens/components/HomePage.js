@@ -36,7 +36,7 @@ function Home({ navigation }) {
         </Text>
 
         <View style={styles.categories}>
-            <Text style={{margin: 20, fontSize: 20, color: '#EDA772', fontWeight: 'bold'}}>Popular</Text>
+            <Text style={{margin: 20, fontSize: 20, color: '#E57622', fontWeight: 'bold'}}>Popular</Text>
             <Text style={styles.categoryNames}>Hackathon</Text>
             <Text style={styles.categoryNames}>Talks</Text>
             <Text style={styles.categoryNames}>ML</Text>
@@ -82,7 +82,14 @@ function Bookmarked() {
 
 function Account() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={styles.accountContainerMain}>
+                  <Text style={styles.login} >
+            Sign in
+        </Text>
+        <Text style={styles.bookmarkHeading}>
+            Profile
+        </Text>
+          
           <AccountPage />
         </View>
       );
@@ -105,8 +112,9 @@ export default function HomePage(){
             initialRouteName="Home"
             tabBarOptions={{
                 activeTintColor: '#ED8F47',
+                inactiveTintColor: 'rgba(3, 28, 52, 0.75)',
                 style: {
-                    backgroundColor: '#031c33',
+                    backgroundColor: '#FFFFFF',
                     height: 53,
                     padding: 10,
                     borderTopWidth: 0,
@@ -167,7 +175,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#031c33',
+        backgroundColor: '#FFFFFF',
     },
     bookmarkContainerMain: {
         backgroundColor: '#E8E8E8',
@@ -189,7 +197,7 @@ const styles = StyleSheet.create({
         fontSize: 45,
         fontFamily: 'RougeScript_400Regular',
         left: 20,
-        color: 'white',
+        color: '#031C33',
         top: 50,
     },
     bookmarkHeading: {
@@ -213,7 +221,8 @@ const styles = StyleSheet.create({
     categoryNames: {
         margin: 20,
         fontSize: 20,
-        color: 'white',
+        color: '#031C34',
+        fontWeight: 'bold'
     },
     bottomNavigation: {
         flexDirection: 'row',

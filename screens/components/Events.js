@@ -79,7 +79,7 @@ export default function Events() {
 
 const styles = StyleSheet.create({
   smallDiv : {
-
+    elevation: 10,
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
     margin: 15, 
