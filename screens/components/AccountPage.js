@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#E8E8E8',
       padding: 15,
       borderRadius: 10,
-      elevation: 5,
       flexDirection: 'row'
     },
     forwardArrow:{

@@ -4,6 +4,7 @@ import {
     useFonts,
     RougeScript_400Regular 
   } from '@expo-google-fonts/rouge-script';
+
 import AppLoading from 'expo-app-loading';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchPage from './SearchPage';
@@ -19,18 +20,13 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 
-function Home({ navigation }) {
+function Home() {
 
- const login = () => {
-     navigation.navigate('Login');
- }
     
     return (
         <View style={styles.container}>
             
-        <Text style={styles.login} onPress={login}>
-            Sign in
-        </Text>
+
         <Text style={styles.hello}>
             Hello!
         </Text>
@@ -51,9 +47,7 @@ function Home({ navigation }) {
 function Search() {
     return (
         <View style={styles.searchContainer}>
-            <Text style={styles.login}>
-                Sign in
-            </Text>
+
             <Text style={styles.categoriesHeading}>
                 Categories
             </Text>
@@ -67,9 +61,7 @@ function Bookmarked() {
     return (
         <View style={styles.bookmarkContainerMain}>
 
-        <Text style={styles.login} >
-            Sign in
-        </Text>
+
         <Text style={styles.bookmarkHeading}>
             Bookmarks
         </Text>
@@ -83,9 +75,7 @@ function Bookmarked() {
 function Account() {
     return (
         <View style={styles.accountContainerMain}>
-                  <Text style={styles.login} >
-            Sign in
-        </Text>
+
         <Text style={styles.bookmarkHeading}>
             Profile
         </Text>
@@ -114,7 +104,7 @@ export default function HomePage(){
                 activeTintColor: '#ED8F47',
                 inactiveTintColor: 'rgba(3, 28, 52, 0.75)',
                 style: {
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: '#F0F0F0',
                     height: 53,
                     padding: 10,
                     borderTopWidth: 0,

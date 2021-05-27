@@ -1,22 +1,47 @@
 import React from "react"; 
-import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity,  } from "react-native";
+import { StyleSheet, Text, TextInput, ActivityIndicator , View, Button, TouchableOpacity,  } from "react-native";
+import firebase from 'firebase'
+import { AsyncStorage } from "react-native"
 
-import { AsyncStorage } from "react-native";
 
-export default function Login() {
+export default class Login extends React.Component {
 
-  state = { email: "", password: "", errorMessage: null };
+  state = { email: "", password: "", errorMessage: null, loading: false };
   handleLogin = () => {
     const { email, password } = this.state;
+
+
+
+    firebase
+    .auth()
+    .onAuthStateChanged(() => {
+      this.setState({pending: true})
+
+    }
+    );
+
+
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         // AsyncStorage.setItem("key", "I like to save it.");
-        this.props.navigation.navigate("OnboardingTwo");
+        this.props.navigation.navigate('Home')
       })
-      .catch(error => this.setState({ errorMessage: error.message }));
+      .catch(
+        error => this.setState({ errorMessage: error.message })
+        );
   };
+
+    render() {   
+
+      if(this.state.pending) {
+        return(
+        <View style={styles.loadingContainer, styles.horizontal}>
+          <ActivityIndicator size="large" color="#E57622"/>
+        </View>
+        )
+      }
 
     return (
       <View>
@@ -43,13 +68,14 @@ export default function Login() {
           <TouchableOpacity>
             <Text style={styles.forgot}>Forgot Password?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn}>
+          <View style={styles.loginBtn}>
             <Text style={styles.loginText} onPress={this.handleLogin}>Sign In</Text>
-          </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
   }
+}
 
 
 const styles = StyleSheet.create({
@@ -116,10 +142,17 @@ newcontainer: {
     alignItems:"center",
     justifyContent:"center",
     marginTop: 100,
-    marginBottom:10
+    marginBottom:10,
+    elevation: 3,
   },
   loginText:{
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  horizontal: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    padding: 10
   }
 });

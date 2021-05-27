@@ -7,6 +7,9 @@ export default function Onboarding({ navigation }) {
     const goHome = () => {
         navigation.navigate('Home');
     }
+    const login = () => {
+        navigation.navigate('Login');
+    }
 
     return(
         <View>
@@ -16,7 +19,7 @@ export default function Onboarding({ navigation }) {
                     Skip
             </Text>
             <View style={styles.getStarted}>
-                <Text style={styles.getStartedText} onPress={goHome}>
+                <Text style={styles.getStartedText} onPress={login}>
                     Get Started
                 </Text>
             </View>

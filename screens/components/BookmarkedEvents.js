@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         bottom: 0,
       },
       shareIcon: {
-        right: 15,
+        left: 210,
         position: 'absolute',
         bottom: 0,
       }

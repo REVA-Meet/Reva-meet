@@ -39,24 +39,29 @@ export default class App extends React.Component {
     return(
       <View style={styles.container}>
 
-      <View style={styles.inputView} > 
-
-       <TextInput style={styles.inputText}
-    
-        onChangeText={text => this.setState({search:text})}/> 
+        <TextInput  
+              style={styles.inputText}
+              placeholder="Search"
+              placeholderTextColor="#003f5c"
+              onChangeText={text => this.setState({search:text})}/>
+          
         <View style={{
-          left: 9,
-          bottom: 2,
+          left: 26,
+          top: 72,
+          position: 'absolute'
         }}> 
           <Ionicons name="md-search" size={22} color="#3E5163"/>
         </View>
+
         <View style={{
-          left: 310,
-          top: -25,
+          right: 29,
+          top: 72,
+          position: 'absolute',
+          elevation: 2
         }}>
         <SimpleLineIcons name="equalizer" size={20} color="#3E5163" />
            </View>
-        </View>
+  
 
 
         <FlatList
@@ -91,8 +96,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 20,
   },
-
-  inputView:{
+  inputText:{
     backgroundColor:"#FFFFFF",
     borderRadius:40,
     height: 50,
@@ -100,12 +104,7 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     top: 60,
     marginBottom: 20,
-    elevation: 10,
-  },
-  inputText:{
-    height: 30,
-    color:"black",
-    right:-35,
+    paddingLeft: 40,
   },
   imagesRow: {
     marginLeft: 15,
