@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       marginLeft: 275,
       marginTop: 13,
-      backgroundColor: '#E72B2B',
+      backgroundColor: 'green',
       color: '#FFFFFF',
       borderRadius: 100,
       fontSize: 12,
