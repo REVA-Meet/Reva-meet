@@ -1,5 +1,5 @@
 # Reva-meet
-Organise and register for events in one go
+An University based event management app
 ## 
 With over 130+ clubs and associations at REVA University, webinars, workshops, and other
 activities being conducted nearly every day, it can be cumbersome to organize, promote and
