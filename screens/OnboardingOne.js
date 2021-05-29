@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Text, Pressable, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 
 
@@ -25,6 +25,8 @@ export default function Onboarding({ navigation }) {
                 <AntDesign style={styles.arrowIconBox} name="arrowright" size={30} color="black" />
             </Pressable>
 
+            <Image style={styles.onbImage} source={require('../assets/OnbOne.png')} />
+
             <View style={styles.firstCard}>
                 <Text style={styles.textOne}>
                     Welcome to REVA Meet
@@ -46,6 +48,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#031c33',
         borderBottomLeftRadius: 270,
         borderBottomRightRadius: 300,
+    },
+    onbImage: {
+        width: 230,
+        height: 180,
+        position: 'absolute',
+        top: 150,
+        marginHorizontal: 80,
     },
     arrowIcon: {
     width: 60,

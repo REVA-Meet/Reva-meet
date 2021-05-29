@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Linking } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
 
 export default function Onboarding({ navigation }) {
@@ -23,6 +23,9 @@ export default function Onboarding({ navigation }) {
                     Get Started
                 </Text>
             </View>
+
+            <Image style={styles.onbImage} source={require('../assets/OnbTwo.png')} />
+
             <View style={styles.firstCard}>
                 <Text style={styles.textOne}>
                     Welcome to REVA Meet
@@ -44,6 +47,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#031c33',
         borderBottomLeftRadius: 270,
         borderBottomRightRadius: 300,
+    },
+    onbImage: {
+        width: 230,
+        height: 180,
+        position: 'absolute',
+        top: 150,
+        marginHorizontal: 80,
     },
     getStarted: {
     width: 126,

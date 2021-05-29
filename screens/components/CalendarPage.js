@@ -11,33 +11,21 @@ let { width } = Dimensions.get('window');
 
 const CalendarPage = () => {
   const [events, setEvents] = useState([
+  
     {
-      color: '#F4EFDB',
-      start: '2020-01-01 00:00:00',
-      end: '2020-01-01 02:00:00',
-      title: 'New Year Party',
-      summary: 'xyz Location',
-    },
-    {
-      start: '2020-01-01 01:00:00',
-      end: '2020-01-01 02:00:00',
-      title: 'New Year Wishes',
-      summary: 'Call to every one',
-    },
-    {
-      start: '2020-01-02 00:30:00',
+      start: '2020-01-01 00:30:00',
       end: '2020-01-02 01:30:00',
-      title: 'Parag Birthday Party',
-      summary: 'Call him',
+      title: 'Reva Hackathon',
+      summary: 'An intrauniversity hackathon',
     },
     {
-      start: '2020-01-03 01:30:00',
+      start: '2020-01-01 01:30:00',
       end: '2020-01-03 02:20:00',
-      title: 'My Birthday Party',
-      summary: 'Lets Enjoy',
+      title: 'Communication Conference',
+      summary: 'Register',
     },
     {
-      start: '2020-02-04 04:10:00',
+      start: '2020-02-01 04:10:00',
       end: '2020-02-04 04:40:00',
       title: 'Engg Expo 2020',
       summary: 'Expoo Vanue not confirm',
